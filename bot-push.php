@@ -7,10 +7,12 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
+	echo "OK 1";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			echo "OK 2";
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -55,4 +57,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK 2";
+echo "OK 3";
