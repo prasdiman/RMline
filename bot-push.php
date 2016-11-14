@@ -6,7 +6,22 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-var_dump($content);
+
+$events = array(
+            'to' => 'shikarumccrayture',
+            'messages' => array(
+                array(
+                    'type' => 'text',
+                    'text' => "Hello, user"
+                ),
+                array(
+                    'type' => 'text',
+                    'text' => "May I help you?"
+                )
+            )
+        );
+
+var_dump($events);
 if (!is_null($events['events'])) {
 	echo "OK 1";
 	// Loop through each event
