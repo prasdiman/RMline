@@ -8,7 +8,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 $events = array(
-            'to' => 'shikarumccrayture',
+            'to' => 'd427b71cf07bf60c4a4c9bd53cb319a2',
             'messages' => array(
                 array(
                     'type' => 'text',
@@ -35,20 +35,15 @@ if (!is_null($events['events'])) {
 			//$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			/*$messages = [
-				'type' => 'text',
-				'text' => $text
-			];*/
-			
 			$messages = [
 				'type' => 'text',
-				'text' => 'Hello line bot'
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = [
-				'to' => 'RM Manager',
+				'to' => 'shikarumccrayture',
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
