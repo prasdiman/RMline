@@ -23,8 +23,29 @@ $access_token = 'N4bRWnBZULx0jxZ/nT8S/Run1T10NJpvo9cghxwErdYvqVnLzosaw30CVKCepn4
 			}
 		}
 	]
-}*/
-$events = array('events' => array(
+}
+
+Array ( 
+	[events] => Array ( 
+		[0] => Array ( 
+			[type] => message 
+			[replyToken] => 059df46f296746d9980da26cf4e9340d 
+			[source] => Array ( 
+				[userId] => Ufbbcb4782a752c630900ec878b670642 
+				[type] => user 
+			) 
+			[timestamp] => 1479200068302 
+			[message] => Array ( 
+				[type] => text 
+				[id] => 5208272933999 
+				[text] => .... 
+			) 
+		) 
+	) 
+)
+*/
+
+$events = array('events' => array(array(
 			    'type' => 'message',
 			    'replyToken' => 'f5aa8c53de0347ff941c7ebbabe877e4',
 			    'to' => 'Ufbbcb4782a752c630900ec878b670642',
@@ -39,6 +60,7 @@ $events = array('events' => array(
 				)
 			    )
 			)
+		   )
 	       );
 if (!is_null($events['events'])) {
 	echo "chk 1";
