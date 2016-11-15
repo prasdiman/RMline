@@ -8,7 +8,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 
 $events = array(
-            'to' => 'd427b71cf07bf60c4a4c9bd53cb319a2',
+            'to' => 'ub6d94f94503468c01d1cc9bf40c421f3',
             'messages' => array(
                 array(
                     'type' => 'text',
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/push';
 			$data = [
-				'to' => 'shikarumccrayture',
+				'to' => $event['to'],
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
