@@ -2,12 +2,13 @@
 $access_token = 'N4bRWnBZULx0jxZ/nT8S/Run1T10NJpvo9cghxwErdYvqVnLzosaw30CVKCepn4kX9Ad97gSEbb4lb9cKhVeZHMlHAYdTBROCRPcTvfHuih5sIRHlMibUktv3V1tP9Zbq3rCaDr51zgdqO19jTK4+AdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-$content = file_get_contents('php://input');
+//$content = file_get_contents('php://input');
 // Parse JSON
-$events = json_decode($content, true);
+//$events = json_decode($content, true);
 // Validate parsed JSON data
 
 $events = array(
+	    'type' => 'message',
             'to' => 'ub6d94f94503468c01d1cc9bf40c421f3',
             'messages' => array(
                 array(
@@ -20,15 +21,12 @@ $events = array(
                 )
             )
         );
-
-var_dump($events);
 if (!is_null($events['events'])) {
-	echo "OK 1";
+	echo "chk 1";
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			echo "OK 2";
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -56,11 +54,6 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			
-			/*$proxy = 'http://203.157.144.10/';
-			$proxyauth = '';
-			curl_setopt($ch, CURLOPT_PROXY, $proxy);
-			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);*/
-			
 			$result = curl_exec($ch);
 			curl_close($ch);
 
@@ -68,4 +61,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK 3";
+echo "OK";
