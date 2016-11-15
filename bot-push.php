@@ -6,10 +6,28 @@ $access_token = 'N4bRWnBZULx0jxZ/nT8S/Run1T10NJpvo9cghxwErdYvqVnLzosaw30CVKCepn4
 // Parse JSON
 //$events = json_decode($content, true);
 // Validate parsed JSON data
-
-$events = array(
+/*{"events":
+ 	[
+		{
+			"type":"message",
+			"replyToken":"f5aa8c53de0347ff941c7ebbabe877e4",
+			"source":{
+				"userId":"Ufbbcb4782a752c630900ec878b670642",
+				"type":"user"
+			},
+			"timestamp":1479200073221,
+			"message":{
+				"type":"text",
+				"id":"5208273284830",
+				"text":"555"
+			}
+		}
+	]
+}*/
+$events = $enents(array(
 	    'type' => 'message',
-            'to' => 'ub6d94f94503468c01d1cc9bf40c421f3',
+	    'replyToken' => 'f5aa8c53de0347ff941c7ebbabe877e4',
+            'to' => 'Ufbbcb4782a752c630900ec878b670642',
             'messages' => array(
                 array(
                     'type' => 'text',
@@ -20,7 +38,7 @@ $events = array(
                     'text' => "May I help you?"
                 )
             )
-        );
+        ));
 if (!is_null($events['events'])) {
 	echo "chk 1";
 	// Loop through each event
