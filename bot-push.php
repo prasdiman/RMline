@@ -24,21 +24,22 @@ $access_token = 'N4bRWnBZULx0jxZ/nT8S/Run1T10NJpvo9cghxwErdYvqVnLzosaw30CVKCepn4
 		}
 	]
 }*/
-$events = $enents(array(
-	    'type' => 'message',
-	    'replyToken' => 'f5aa8c53de0347ff941c7ebbabe877e4',
-            'to' => 'Ufbbcb4782a752c630900ec878b670642',
-            'messages' => array(
-                array(
-                    'type' => 'text',
-                    'text' => "Hello, user"
-                ),
-                array(
-                    'type' => 'text',
-                    'text' => "May I help you?"
-                )
-            )
-        ));
+$events = array('events' => array(
+			    'type' => 'message',
+			    'replyToken' => 'f5aa8c53de0347ff941c7ebbabe877e4',
+			    'to' => 'Ufbbcb4782a752c630900ec878b670642',
+			    'messages' => array(
+				array(
+				    'type' => 'text',
+				    'text' => "Hello, user"
+				),
+				array(
+				    'type' => 'text',
+				    'text' => "May I help you?"
+				)
+			    )
+			)
+	       );
 if (!is_null($events['events'])) {
 	echo "chk 1";
 	// Loop through each event
