@@ -4,4 +4,4 @@ $content = '{"events":[{"type":"message","replyToken":"059df46f296746d9980da26cf
 
 $events = json_decode($content, true);
 
-vardump($events);
+print_r($events);
