@@ -45,7 +45,8 @@ Array (
 )
 */
 
-$events = array('events' => array(array(
+$events = ['events' => [
+			  [
 			    'type' => 'message',
 			    'replyToken' => 'f5aa8c53de0347ff941c7ebbabe877e4',
 			    'to' => '@jec8363y',
@@ -59,9 +60,9 @@ $events = array('events' => array(array(
 				    'text' => "May I help you?"
 				)
 			    )
-			)
-		   )
-	       );
+			]
+		   ]
+	       ];
 if (!is_null($events['events'])) {
 	echo "chk 1";
 	// Loop through each event
