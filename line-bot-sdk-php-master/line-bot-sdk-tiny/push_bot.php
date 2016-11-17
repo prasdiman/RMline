@@ -23,12 +23,26 @@ $channelSecret = '962709d6a1918d410be65fe2c053207a';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 //foreach ($client->parseEvents() as $event) {
+
+/*{
+  "to":["u5912407b444e54885d00111f7b0ce375"],
+  "toChannel":1383378250,
+  "eventType":"138311608800106203",
+  "content":{
+    "contentType":1,
+    "toType":1,
+    "text":"Hello, Jose!"
+  }
+}*/
+
+
             $message = [
 							"type": "text",
 							"text": "Hello, world"
 						];
                     $client->pushMessage(array(
-                        'to' => '1486505354',
+                        'to' => 'ub6d94f94503468c01d1cc9bf40c421f3',
+			'toChannel' => '1486505354'
                         'messages' => array(
                             array(
                                 'type' => 'text',
