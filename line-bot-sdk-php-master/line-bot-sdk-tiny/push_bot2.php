@@ -23,7 +23,7 @@ $channelSecret = '962709d6a1918d410be65fe2c053207a';
 
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('helloTest');
 $response = $bot->pushMessage('ub6d94f94503468c01d1cc9bf40c421f3', $textMessageBuilder);
