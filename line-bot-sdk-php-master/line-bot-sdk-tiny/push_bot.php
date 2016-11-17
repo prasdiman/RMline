@@ -50,4 +50,6 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
                             )
                         )
                     ));
+
+echo 'Push-ok';
 //};
