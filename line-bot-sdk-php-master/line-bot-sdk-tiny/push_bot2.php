@@ -21,19 +21,11 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = 'N4bRWnBZULx0jxZ/nT8S/Run1T10NJpvo9cghxwErdYvqVnLzosaw30CVKCepn4kX9Ad97gSEbb4lb9cKhVeZHMlHAYdTBROCRPcTvfHuih5sIRHlMibUktv3V1tP9Zbq3rCaDr51zgdqO19jTK4+AdB04t89/1O/w1cDnyilFU=';
 $channelSecret = '962709d6a1918d410be65fe2c053207a';
 
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-//foreach ($client->parseEvents() as $event) {
-            $message = [
-							"type": "text",
-							"text": "Hello, world"
-						];
-                    $client->pushMessage(array(
-                        'to' => '1486505354',
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => $message['text']
-                            )
-                        )
-                    ));
-//};
+
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($channelAccessToken);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('helloTest');
+$response = $bot->pushMessage('ub6d94f94503468c01d1cc9bf40c421f3', $textMessageBuilder);
+
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
